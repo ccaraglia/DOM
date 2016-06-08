@@ -54,18 +54,19 @@ document.querySelector("#remove button").addEventListener('click',function(){
     var ulNode = document.querySelector("#userList")
     var liNodeList = ulNode.querySelectorAll(".inactive")
 
+console.log(liNodeList)
+for (var i = 0; i < liNodeList.length; i ++) {
 
-    //clearChildren(ulNode,".inactive")
-    var clearInactive = function(container,liNodes) {
-        for (var i = 0; i < liNodes.length; i ++) {
-            var liNode = liNodes[i]
-                if (liNode.classList.contains('inactive')) {
-                    container.removeChild(liNode)
+                if(liNodeList[i].style.display === 'none'){
+                    liNodeList[i].style.display = '';
+                }else{
+                liNodeList[i].style.display = 'none';
                 }
-        }
     }
 
-clearInactive(ulNode, liNodeList)
+
+
+
 })
 
 
